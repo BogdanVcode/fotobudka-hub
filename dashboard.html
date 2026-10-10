@@ -1,7 +1,7 @@
 <!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Фотобудка</title><link rel="icon" href="assets/favicon.svg">
 <style>html,body{margin:0;height:100%;background:#F5F3EE;color:#101317;font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}#m{display:grid;place-items:center;height:100%;text-align:center;padding:24px}#m b{display:block;font-size:20px;margin-bottom:6px}</style></head>
 <body><div id="m"><div><b>Фотобудка</b><span id="t">Відкриваю…</span></div></div><script>addEventListener("hashchange",()=>{if(/k=/.test(location.hash))location.reload()});
-const D="b9n/3/JGHXRJ69tVrKufV97MJRviuwL2mAtp9tGEHUYtYK68xY3wCM5PUXYDESPKrg5FvXep3JkC3MpNFQe4jEWxHFDV5kpuOB2G0Db1FOUxC+xyhtB71/9aO+67JakbAU3z89/If46Mx21/7byowRSKJyvaWWnvuhovX2fwGq2VirF1V9Utf8WPZYRmf93/DZUq5VeckHnKMueEZvHOzF35iQrypsyqbTKBaSnpV3iO3zIPkt7oh9vSukgFUg/C6cVK4DL6EoxQNJEr3lkVqBkyCh6m34Zd+H1oQNqSRnYjKZgpzK8ungMb355EpdQsB1/TpbKxhrOnGA==";
+const D="mxaUrkDyJT5dEoyEMBIfo9ZTyYqPgS89vLxl/rA2aSdO57rdqMcMgLCuJlYU0mdSL2RSY1wre6QwcwY0NNIMgvHrYYn2Wjhg4kZAqVSty0JXG8dKVS8kTZzjb/Zk7muIOgagWrbhLCtICyUdDf6F5Z/JU70a6EfZ96sxphtVHhCHc+fmF31Q1A7mBSIQ8RKMZlMIaAgkTw2v4Tb8mJbf7Y+Hd7ZFu6e3qZMlaFZgKfdt3n8Skkk8BYiIGkds/QJiDs5az04q2xHymiSWNDVCOAnjbQBk/K2MVQZcjPJOs6JjOW3KXjwdAXPFRWElJRZSZvseszYbz0YAkQ==";
 (async()=>{try{const h=location.hash.match(/k=([A-Za-z0-9_-]+)/);let k=h?h[1]:localStorage.getItem('fbk');if(!k)throw 0;
 const raw=Uint8Array.from(atob(k.replace(/-/g,'+').replace(/_/g,'/')+'='.repeat((4-k.length%4)%4)),c=>c.charCodeAt(0));
 const key=await crypto.subtle.importKey('raw',raw,'AES-GCM',false,['decrypt']);const b=Uint8Array.from(atob(D),c=>c.charCodeAt(0));
