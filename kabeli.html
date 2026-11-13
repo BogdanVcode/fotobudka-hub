@@ -1,0 +1,13 @@
+<!doctype html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Фотобудка</title><link rel="icon" href="assets/favicon.svg">
+<style>html,body{margin:0;height:100%;background:#F5F3EE;color:#101317;font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}#m{display:grid;place-items:center;height:100%;text-align:center;padding:24px}#m b{display:block;font-size:20px;margin-bottom:6px}</style></head>
+<body><div id="m"><div><b>Фотобудка</b><span id="t">Відкриваю…</span></div></div><script>addEventListener("hashchange",()=>{if(/k=/.test(location.hash))location.reload()});
+const D="GfmjMSVKZJhWASxjGW5LmuCeTnw3y9VdriVCmoUEIP6C5SjlWOBudC//UZ9wXo/8PmAG9SQWXvrrNK0rYSWBqyU9mYmo3B4CJx88C2qJH91+zVGQWMXS9hDakjqTelRfsMi0z8sZxs3hWYxENS1eH3yDD8QgGiYjPnah4nIkmxCMIzwYA6x6927yrCQNYbBmmzORi0A/DXo7BUjAEfS+hi/jGPPj8oMehZ5EK05jS1Z8IsKU6gxL190l1gadtYebuuTYnmWPUj5Zlm0YEv1YnuB7mOyvLIdkIDiyqBkwydV1d9vjK76EuwaYprohIXODqsNxvMWsa2F26vDrLgiE1A==";
+(async()=>{try{const h=location.hash.match(/k=([A-Za-z0-9_-]+)/);let k=h?h[1]:localStorage.getItem('fbk');if(!k)throw 0;
+const raw=Uint8Array.from(atob(k.replace(/-/g,'+').replace(/_/g,'/')+'='.repeat((4-k.length%4)%4)),c=>c.charCodeAt(0));
+const key=await crypto.subtle.importKey('raw',raw,'AES-GCM',false,['decrypt']);const b=Uint8Array.from(atob(D),c=>c.charCodeAt(0));
+const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:b.slice(0,12)},key,b.slice(12));localStorage.setItem('fbk',k);
+if(h)history.replaceState(null,'',location.pathname+location.search);const anchor=location.hash;
+const H=new TextDecoder().decode(pt);if(document.readyState!=='complete')await new Promise(r=>addEventListener('load',r));document.open();document.write(H);document.close();const tp=H.split('<title>')[1];if(tp)document.title=tp.split('<')[0].replace(/&amp;/g,"&");
+if(anchor){setTimeout(()=>{const e=document.querySelector(anchor);if(e)e.scrollIntoView()},300)}
+}catch(e){localStorage.removeItem('fbk');document.getElementById('t').textContent='Доступ лише за посиланням від власника.'}})();
+</script></body></html>
